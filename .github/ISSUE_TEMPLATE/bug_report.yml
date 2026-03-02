@@ -1,0 +1,132 @@
+name: Bug report
+description: Report a bug, crash, or unexpected behavior (Minecraft 1.12.2)
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please fill this out so I can reproduce it.
+        Useful files:
+        - logs/latest.log
+        - logs/debug.log (if present)
+        - crash-reports/<date>-<time>-client.txt or -server.txt
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched existing issues and did not find a duplicate
+          required: true
+        - label: This is for Minecraft 1.12.2 (Forge)
+          required: true
+        - label: I tested the latest mod version available (or confirmed it also happens on the latest)
+          required: false
+
+  - type: input
+    id: mod_version
+    attributes:
+      label: Mod version
+      placeholder: "e.g. 1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: side
+    attributes:
+      label: Side
+      options:
+        - Client
+        - Dedicated server
+        - Both
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where does it happen?
+      options:
+        - Singleplayer
+        - Multiplayer (dedicated server)
+        - Multiplayer (LAN)
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: minimal_repro
+    attributes:
+      label: Reproducible with only this mod and its required dependencies?
+      description: Helps separate mod conflicts from standalone bugs.
+      options:
+        - Yes
+        - No (seems like a mod conflict)
+        - Not tested
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps, minimal and exact.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: "What you expected to happen."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      placeholder: "What actually happened (include any on-screen error text)."
+    validations:
+      required: true
+
+  - type: textarea
+    id: modlist
+    attributes:
+      label: Mod list / modpack
+      description: Optional, but very helpful for conflicts. Paste a short list or attach a file.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / crash report
+      description: Paste relevant parts or upload the file(s).
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Relevant config(s)
+      description: If you changed configs, paste the relevant parts or upload the config file(s).
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Extra context
+      description: Screenshots, video, reproduction world, anything else.
+    validations:
+      required: false
