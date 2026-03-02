@@ -10,7 +10,7 @@ body:
         Useful files:
         - logs/latest.log
         - logs/debug.log (if present)
-        - crash-reports/<date>-<time>-client.txt or -server.txt
+        - crash-reports/*.txt
 
   - type: checkboxes
     id: checks
@@ -37,10 +37,10 @@ body:
     attributes:
       label: Side
       options:
-        - Client
-        - Dedicated server
-        - Both
-        - Not sure
+        - "Client"
+        - "Dedicated server"
+        - "Both"
+        - "Not sure"
     validations:
       required: true
 
@@ -49,10 +49,10 @@ body:
     attributes:
       label: Where does it happen?
       options:
-        - Singleplayer
-        - Multiplayer (dedicated server)
-        - Multiplayer (LAN)
-        - Not sure
+        - "Singleplayer"
+        - "Multiplayer (dedicated server)"
+        - "Multiplayer (LAN)"
+        - "Not sure"
     validations:
       required: true
 
@@ -62,9 +62,9 @@ body:
       label: Reproducible with only this mod and its required dependencies?
       description: Helps separate mod conflicts from standalone bugs.
       options:
-        - Yes
-        - No (seems like a mod conflict)
-        - Not tested
+        - "Yes"
+        - "No (seems like a mod conflict)"
+        - "Not tested"
     validations:
       required: true
 
@@ -118,7 +118,7 @@ body:
     id: config
     attributes:
       label: Relevant config(s)
-      description: If you changed configs, paste the relevant parts or upload the config file(s).
+      description: If you changed configs, paste relevant parts or upload the config file(s).
       render: text
     validations:
       required: false
