@@ -6,13 +6,13 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this when the issue only happens with other mods/modpacks, or seems like an interaction problem.
-        The most important things are: mod list + logs + minimal repro.
+        Use this when it only happens with other mods/modpacks, or seems like an interaction problem.
+        Most important: mod list + logs + minimal repro.
 
         Useful files:
         - logs/latest.log
         - logs/debug.log (if present)
-        - crash-reports/<date>-<time>-client.txt or -server.txt
+        - crash-reports/*.txt
 
   - type: checkboxes
     id: checks
@@ -38,30 +38,6 @@ body:
       label: Other mod(s) involved
       description: Name and version of the other mod(s) you suspect.
       placeholder: "e.g. Applied Energistics 2 r-v6-stable-7 + SomeAddon 1.2.3"
-    validations:
-      required: true
-
-  - type: dropdown
-    id: side
-    attributes:
-      label: Side
-      options:
-        - Client
-        - Dedicated server
-        - Both
-        - Not sure
-    validations:
-      required: true
-
-  - type: dropdown
-    id: environment
-    attributes:
-      label: Where does it happen?
-      options:
-        - Singleplayer
-        - Multiplayer (dedicated server)
-        - Multiplayer (LAN)
-        - Not sure
     validations:
       required: true
 
@@ -119,7 +95,7 @@ body:
     id: config
     attributes:
       label: Relevant config(s) (optional)
-      description: Paste the relevant parts or upload config files if they might affect the interaction.
+      description: Paste relevant parts or upload config files if they might affect the interaction.
       render: text
     validations:
       required: false
