@@ -40,9 +40,9 @@ body:
     attributes:
       label: Should this be configurable?
       options:
-        - Yes
-        - No
-        - Not sure
+        - "Yes"
+        - "No"
+        - "Not sure"
     validations:
       required: false
 
