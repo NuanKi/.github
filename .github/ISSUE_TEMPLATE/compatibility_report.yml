@@ -54,10 +54,7 @@ body:
     attributes:
       label: Minimal mod set to reproduce
       description: Best case: only this mod + the other mod(s) needed to trigger it.
-      placeholder: |
-        - This mod: x.y.z
-        - Other mod: a.b.c
-        - Any required dependencies: ...
+      placeholder: "- This mod: x.y.z\n- Other mod: a.b.c\n- Any required dependencies: ..."
     validations:
       required: true
 
@@ -66,10 +63,7 @@ body:
     attributes:
       label: Steps to reproduce
       description: Numbered steps, minimal and exact.
-      placeholder: |
-        1. ...
-        2. ...
-        3. ...
+      placeholder: "1. ...\n2. ...\n3. ..."
     validations:
       required: true
 
