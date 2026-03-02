@@ -1,0 +1,72 @@
+name: Feature request
+description: Suggest an improvement or new feature (Minecraft 1.12.2)
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the use case first, then the solution.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched existing issues and did not find a duplicate
+          required: true
+        - label: This request is for Minecraft 1.12.2 (Forge)
+          required: true
+
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case / problem
+      description: What are you trying to do? What is missing or annoying today?
+      placeholder: "As a player/modpack author, I want..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the behavior, UI (if any), and edge cases.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: config_option
+    attributes:
+      label: Should this be configurable?
+      options:
+        - Yes
+        - No
+        - Not sure
+    validations:
+      required: false
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility considerations (optional)
+      description: Mods this should integrate with, avoid conflicting with, or match behavior of.
+      placeholder: "Examples: JEI, CraftTweaker, AE2, Baubles, etc."
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives / workarounds (optional)
+      description: Other mods, configs, scripts, manual steps, etc.
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Extra context (optional)
+      description: Screenshots, links, mockups, prior art.
+    validations:
+      required: false
