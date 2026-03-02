@@ -1,0 +1,133 @@
+name: Compatibility / Mod conflict
+description: Report a conflict or compatibility issue with another mod or modpack (Minecraft 1.12.2)
+title: "[Compat]: "
+labels: ["compatibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this when the issue only happens with other mods/modpacks, or seems like an interaction problem.
+        The most important things are: mod list + logs + minimal repro.
+
+        Useful files:
+        - logs/latest.log
+        - logs/debug.log (if present)
+        - crash-reports/<date>-<time>-client.txt or -server.txt
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched existing issues and did not find a duplicate
+          required: true
+        - label: This is for Minecraft 1.12.2 (Forge)
+          required: true
+
+  - type: input
+    id: mod_version
+    attributes:
+      label: Mod version (this repo)
+      placeholder: "e.g. 1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: other_mods
+    attributes:
+      label: Other mod(s) involved
+      description: Name and version of the other mod(s) you suspect.
+      placeholder: "e.g. Applied Energistics 2 r-v6-stable-7 + SomeAddon 1.2.3"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: side
+    attributes:
+      label: Side
+      options:
+        - Client
+        - Dedicated server
+        - Both
+        - Not sure
+    validations:
+      required: true
+
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Where does it happen?
+      options:
+        - Singleplayer
+        - Multiplayer (dedicated server)
+        - Multiplayer (LAN)
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: what_happens
+    attributes:
+      label: What happens?
+      description: Describe the conflict clearly. Include symptoms and any error text.
+    validations:
+      required: true
+
+  - type: textarea
+    id: minimal_set
+    attributes:
+      label: Minimal mod set to reproduce
+      description: Best case: only this mod + the other mod(s) needed to trigger it.
+      placeholder: |
+        - This mod: x.y.z
+        - Other mod: a.b.c
+        - Any required dependencies: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Numbered steps, minimal and exact.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: modlist
+    attributes:
+      label: Full mod list / modpack info
+      description: Required for compatibility issues. Paste the list or attach a file.
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / crash report
+      description: Required for compatibility issues. Paste relevant parts or upload the file(s).
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Relevant config(s) (optional)
+      description: Paste the relevant parts or upload config files if they might affect the interaction.
+      render: text
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Extra context (optional)
+      description: Screenshots, video, links to other issues, anything else.
+    validations:
+      required: false
